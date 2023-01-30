@@ -1,5 +1,7 @@
 package com.powergreen.powergreen.model;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +23,7 @@ public class PlanosModel {
 	
 	@NotBlank(message= "O Atributo preço é obrigatório")
 	
-	private Float preço;
+	private BigDecimal preco;
 
 	public Long getId() {
 		return id;
@@ -39,13 +41,13 @@ public class PlanosModel {
 		this.nome = nome;
 	}
 
-	public Float getPreço() {
-		return preço;
+	public BigDecimal getPreco() {
+		return preco;
 	}
 
-	public void setPreço(Float preço) {
-		this.preço = preço;
+	public void setPreco(BigDecimal preco) {
+		this.preco = preco;
 	}
-	
+
 	
 }
