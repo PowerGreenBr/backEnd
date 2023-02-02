@@ -9,6 +9,6 @@ import com.powergreen.powergreen.model.Plano;
 
 public interface PlanoRepository extends JpaRepository <Plano,Long> {
 
-public List<Plano> findAllByNomeContainingIgnoreCase(@Param("descricao") String nome);
+public List<Plano> findAllByNomeContainingIgnoreCase(@Param("nome") String nome);
 
 }
