@@ -24,7 +24,7 @@ import com.powergreen.powergreen.model.Plano;
 import com.powergreen.powergreen.repository.PlanoRepository;
 
 @RestController
-@RequestMapping("/Plano")
+@RequestMapping("/plano")
 @CrossOrigin(origins = "", allowedHeaders = "")
 public class PlanoController {
     
