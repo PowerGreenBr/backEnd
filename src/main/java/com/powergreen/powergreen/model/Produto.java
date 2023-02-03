@@ -32,6 +32,10 @@ public class Produto {
 	@JsonIgnoreProperties("produto")
 	private Plano plano;
 
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Usuario usuario;
+	
 	public Long getId() {
 		return id;
 	}
@@ -87,5 +91,14 @@ public class Produto {
 	public void setPlano(Plano plano) {
 		this.plano = plano;
 	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
 	
 }
