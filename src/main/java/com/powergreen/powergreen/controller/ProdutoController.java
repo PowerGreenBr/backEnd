@@ -20,59 +20,59 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.powergreen.powergreen.model.Plano;
-import com.powergreen.powergreen.repository.PlanoRepository;
+import com.powergreen.powergreen.model.Produto;
+import com.powergreen.powergreen.repository.ProdutoRepository;
 
 @RestController
-@RequestMapping("/planos")
+@RequestMapping("/produtos")
 @CrossOrigin(origins = "", allowedHeaders = "")
-public class PlanoController {
+public class ProdutoController {
     
     @Autowired
-    private PlanoRepository PlanoRepository;
+    private ProdutoRepository ProdutoRepository;
     
     @GetMapping
-    public ResponseEntity<List<Plano>> getAll(){
-        return ResponseEntity.ok(PlanoRepository.findAll());
+    public ResponseEntity<List<Produto>> getAll(){
+        return ResponseEntity.ok(ProdutoRepository.findAll());
     }
     
     @GetMapping("/{id}")
-    public ResponseEntity<Plano> getById(@PathVariable Long id){
-        return PlanoRepository.findById(id)
+    public ResponseEntity<Produto> getById(@PathVariable Long id){
+        return ProdutoRepository.findById(id)
             .map(resposta -> ResponseEntity.ok(resposta))
             .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
     
     @GetMapping("/nome/{nome}")
-    public ResponseEntity<List<Plano>> getByTitle(@PathVariable 
+    public ResponseEntity<List<Produto>> getByTitle(@PathVariable 
     String nome){
-        return ResponseEntity.ok(PlanoRepository
+        return ResponseEntity.ok(ProdutoRepository
             .findAllByNomeContainingIgnoreCase(nome));
     }
     
     @PostMapping
-    public ResponseEntity<Plano> post(@Valid @RequestBody Plano plano){
+    public ResponseEntity<Produto> post(@Valid @RequestBody Produto produto){
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(PlanoRepository.save(plano));
+                .body(ProdutoRepository.save(produto));
     }
     
     @PutMapping
-    public ResponseEntity<Plano> put(@Valid @RequestBody Plano plano){
-        return PlanoRepository.findById(plano.getId())
+    public ResponseEntity<Produto> put(@Valid @RequestBody Produto produto){
+        return ProdutoRepository.findById(produto.getId())
             .map(resposta -> ResponseEntity.status(HttpStatus.CREATED)
-            .body(PlanoRepository.save(plano)))
+            .body(ProdutoRepository.save(produto)))
             .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
     
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-        Optional<Plano> Plano = PlanoRepository.findById(id);
+        Optional<Produto> Produto = ProdutoRepository.findById(id);
         
-        if(Plano.isEmpty())
+        if(Produto.isEmpty())
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         
-       PlanoRepository.deleteById(id);              
+       ProdutoRepository.deleteById(id);              
     }
 
 }
