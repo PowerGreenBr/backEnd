@@ -14,7 +14,7 @@
 	<name>PowerGreen</name>
 	<description>Aplicação Full-Stack,Web, Mobile &amp; E-commerce</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -46,9 +46,9 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-	<groupId>org.postgresql</groupId>
-	<artifactId>postgresql</artifactId>
-</dependency> 
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -65,10 +65,10 @@
 			<artifactId>commons-codec</artifactId>
 		</dependency>
 		<dependency>
-     <groupId>org.springdoc</groupId>
-     <artifactId>springdoc-openapi-ui</artifactId>
-     <version>1.6.9</version>
-</dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.9</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
