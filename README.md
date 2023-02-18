@@ -11,14 +11,16 @@ A aplicação consiste em um e-commerce para locação de bateria recaregável (
 ## Fluxo do usuário 
 ```mermaid
 graph TD;
-Página_principal-->Cadastro/usuário;
-Página_principal-->Login_usuário;
-Cadastro/usuário-->Login_usuário;
-Login_usuário-->Escolha_da_assinatura;
-Escolha_da_assinatura-->Escolha_da_bateria;
-Escolha_da_bateria-->Pagamento_adicional;
-Escolha_da_bateria-->Finaliza_pedido;
-Pagamento_adicional-->Finaliza_pedido;
+Tela/Lista_de_produtos-->Seleciona/produto;
+Seleciona/produto-->Tela/produto;
+Tela/produto-->Seleciona/Plano_&_produto;
+Seleciona/Plano_&_produto-->Tela/Login;
+Tela/Login-->Tela/Pagamento
+Tela/Login-->Tela/Cadastro
+Tela/Cadastro-->Tela/Pagamento;
+Seleciona/Plano_&_produto-->Tela/Pagamento;
+Tela/Pagamento-->Fim/pedido
+
 ```
 
 ## DER - Diagrama Entidade Relacionamento
