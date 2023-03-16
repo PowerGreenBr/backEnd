@@ -25,7 +25,7 @@ import com.powergreen.powergreen.repository.ProdutoRepository;
 
 @RestController
 @RequestMapping("/produtos")
-@CrossOrigin(origins = "", allowedHeaders = "")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProdutoController {
     
     @Autowired
